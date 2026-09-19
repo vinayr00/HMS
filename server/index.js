@@ -34,27 +34,41 @@ const app = express();
 // Security & parsing
 app.use(helmet());
 
-// CORS configuration — strict allowlist for production + local dev fallbacks
+// CORS configuration — allowlist with Vercel and local dev support
 const rawOrigins = [
     process.env.FRONTEND_URL,
     process.env.CLIENT_ORIGIN,
-    process.env.NODE_ENV !== 'production' ? 'http://localhost:5173' : null,
-    process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:5173' : null,
-    process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : null,
+    'https://hms-client-steel.vercel.app',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
 ];
 
 const allowedOrigins = rawOrigins
     .flatMap(o => (o ? o.split(',').map(s => s.trim().replace(/\/+$/, '')) : []))
     .filter(Boolean);
 
+const isOriginAllowed = (origin) => {
+    if (!origin) return true; // Server-to-server, curl, health probes
+    const normalized = origin.trim().replace(/\/+$/, '');
+    if (allowedOrigins.includes('*') || allowedOrigins.includes(normalized)) {
+        return true;
+    }
+    // Allow any Vercel domain (e.g. https://hms-client-steel.vercel.app or branch previews)
+    if (/^https:\/\/[a-zA-Z0-9-]+\.vercel\.app$/.test(normalized)) {
+        return true;
+    }
+    // Allow localhost/127.0.0.1 on any port
+    if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(normalized)) {
+        return true;
+    }
+    return false;
+};
+
 const corsOptions = {
     origin(origin, callback) {
-        // Allow requests with no origin (e.g. server-to-server, curl, health check probes)
-        if (!origin) {
-            return callback(null, true);
-        }
-        const normalizedOrigin = origin.trim().replace(/\/+$/, '');
-        if (allowedOrigins.includes(normalizedOrigin)) {
+        if (isOriginAllowed(origin)) {
             return callback(null, true);
         }
         return callback(new Error(`CORS origin not allowed: ${origin}`));
