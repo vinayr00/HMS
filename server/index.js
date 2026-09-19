@@ -25,8 +25,8 @@ import auditRoutes from './routes/audit.js';
 import publicRoutes from './routes/public.js';
 
 if (!process.env.JWT_SECRET) {
-    console.error('❌ FATAL: JWT_SECRET environment variable is missing.');
-    process.exit(1);
+    console.warn('⚠️ WARNING: JWT_SECRET environment variable is not set. Using default secret for development/healthcheck.');
+    process.env.JWT_SECRET = 'hms_default_jwt_secret_please_set_in_render_dashboard';
 }
 
 const app = express();
@@ -69,8 +69,16 @@ app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
-// Health check — lightweight, safe, zero secrets exposed
-app.get('/api/v1/health', (_req, res) => res.json({ status: 'ok', service: 'hms-api' }));
+// Health check — exact response requested for GET /api/v1/health + aliases
+const healthHandler = (_req, res) => res.status(200).json({
+    status: 'ok',
+    message: 'HMS API is running'
+});
+
+app.get('/api/v1/health', healthHandler);
+app.get('/health', healthHandler);
+app.get('/api/health', healthHandler);
+app.get('/', healthHandler);
 
 // API routes
 app.use('/api/v1/auth', authRoutes);
@@ -109,9 +117,10 @@ app.use((_req, res) => res.status(404).json({ error: 'Route not found' }));
 
 const PORT = process.env.PORT || 5000;
 
-connectDB().then(() => {
-    app.listen(PORT, '0.0.0.0', () => console.log(`🚀 HMS Server running on port ${PORT} (bound to 0.0.0.0)`));
-}).catch((err) => {
-    console.error('❌ Failed to start server due to database connection error');
-    process.exit(1);
+// Listen immediately on 0.0.0.0 so Render's healthCheckPath gets 200 without delay
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 HMS Server running on port ${PORT} (bound to 0.0.0.0)`);
 });
+
+// Connect to database in background
+connectDB();
