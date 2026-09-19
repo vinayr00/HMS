@@ -22,11 +22,18 @@ export const AuthProvider = ({ children }) => {
                 setUser(normalizedUser);
                 setIsAuthenticated(true);
             })
-            .catch(() => {
-                // Token is expired or invalid — clear storage
-                localStorage.removeItem("hms_token");
-                localStorage.removeItem("hms_user");
-                localStorage.removeItem("hms_role");
+            .catch((err) => {
+                // Only purge tokens on definitive authentication rejection (401)
+                // Avoid logging users out on Render cold starts or temporary network errors
+                if (err.status === 401) {
+                    localStorage.removeItem("hms_token");
+                    localStorage.removeItem("hms_user");
+                    localStorage.removeItem("hms_role");
+                    setUser(null);
+                    setIsAuthenticated(false);
+                } else {
+                    console.warn("Auth check encountered network/server error (possible cold start):", err.message);
+                }
             })
             .finally(() => setAuthReady(true));
     }, []);

@@ -9,7 +9,7 @@ router.use(verifyToken);
 
 router.get('/', requireRole('receptionist', 'admin'), getAll);
 router.post('/', requireRole('receptionist'), create);
-router.patch('/:id/pay', requireRole('receptionist'), markPaid);
+router.patch('/:id/pay', requireRole('receptionist', 'admin'), markPaid);
 router.patch('/:id/refund', requireRole('admin'), refund);
 
 export default router;

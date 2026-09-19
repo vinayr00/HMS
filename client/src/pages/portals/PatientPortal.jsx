@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Clock, MapPin, Phone, ArrowRight } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import HomeBg from '../../assets/Home.png';
+import { publicService } from '../../services/public.service';
 
 const PatientPortal = () => {
     const navigate = useNavigate();
@@ -10,13 +11,8 @@ const PatientPortal = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/v1/users/public/doctors')
-            .then(res => res.json())
-            .then(data => {
-                if (data.success && data.data) {
-                    setDoctors(data.data);
-                }
-            })
+        publicService.getDoctors()
+            .then(data => setDoctors(data))
             .catch(err => console.error('Failed to fetch public doctors:', err))
             .finally(() => setLoading(false));
     }, []);

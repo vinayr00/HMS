@@ -39,8 +39,21 @@ export const create = async (req, res) => {
 };
 
 export const update = async (req, res) => {
-    const { password, ...updates } = req.body; // Don't allow password update via this route
-    const user = await User.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true }).select('-passwordHash');
+    // Explicit allowlist — never pass req.body directly to Mongoose
+    const ALLOWED = ['name', 'email', 'phone', 'role', 'department', 'status'];
+    const updates = Object.fromEntries(
+        Object.entries(req.body).filter(([k]) => ALLOWED.includes(k))
+    );
+
+    if (Object.keys(updates).length === 0) {
+        return res.status(400).json({ error: 'No valid fields provided for update' });
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.params.id,
+        updates,
+        { new: true, runValidators: true }
+    ).select('-passwordHash');
     if (!user) return res.status(404).json({ error: 'User not found' });
 
     await writeLog({

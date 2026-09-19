@@ -87,14 +87,16 @@ const DoctorAppointments = ({ appointments = [], setAppointments, refetchAppoint
                     <p className="text-label">{new Date().toLocaleDateString()}</p>
                 </div>
                 <div>
-                    {appointments.map(app => (
+                    {appointments.map(app => {
+                        const appId = app._id || app.id;
+                        return (
                         <div
-                            key={app.id}
-                            className={`doctor-card ${selectedId === app.id ? 'active' : ''}`}
+                            key={appId}
+                            className={`doctor-card ${selectedId === appId ? 'active' : ''}`}
                             style={{ opacity: app.status === 'completed' ? 0.6 : 1 }}
                             onClick={() => {
-                                setSelectedId(app.id);
-                                setShowHistory(false); // Reset history view on switch
+                                setSelectedId(appId);
+                                setShowHistory(false);
                             }}
                         >
                             <div className="doctor-card-header">
@@ -102,14 +104,15 @@ const DoctorAppointments = ({ appointments = [], setAppointments, refetchAppoint
                                 {renderStatusBadge(app.status)}
                             </div>
                             <div>
-                                <h4 className="text-value">{app.patientName}</h4>
-                                <p className="text-label">{app.age} yrs • {app.gender}</p>
+                                <h4 className="text-value">{app.patient?.name || app.patientName}</h4>
+                                <p className="text-label">{app.patient?.age ?? app.age} yrs • {app.patient?.gender ?? app.gender}</p>
                             </div>
                             <p className="text-label" style={{ marginTop: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                {app.reason}
+                                {app.details || app.reason}
                             </p>
                         </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
 
@@ -120,9 +123,12 @@ const DoctorAppointments = ({ appointments = [], setAppointments, refetchAppoint
                         {/* Header */}
                         <div className="detail-header glass-header" style={{ marginBottom: '2rem' }}>
                             <div>
-                                <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>{selectedAppointment.patientName}</h2>
+                                <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>
+                                    {selectedAppointment.patient?.name || selectedAppointment.patientName}
+                                </h2>
                                 <p className="text-label" style={{ fontSize: '1rem', margin: 0 }}>
-                                    Patient ID: #{1000 + selectedAppointment.id} • {selectedAppointment.age} Years • {selectedAppointment.gender}
+                                    {selectedAppointment.patient?.age ?? selectedAppointment.age} Years • {selectedAppointment.patient?.gender ?? selectedAppointment.gender}
+                                    {selectedAppointment.patient?.contact && ` • ${selectedAppointment.patient.contact}`}
                                 </p>
                             </div>
                             {renderStatusBadge(selectedAppointment.status)}

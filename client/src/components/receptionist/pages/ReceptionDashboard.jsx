@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, UserCheck, Users, Activity, CheckCircle, AlertTriangle, X, FileText, Bell, ChevronRight, User } from 'lucide-react';
 import { useReception } from '../../../context/ReceptionContext';
 import { useAuth } from '../../../hooks/useAuth';
+import { publicService } from '../../../services/public.service';
 
 const ReceptionDashboard = ({ setActiveTab }) => {
     const { appointments = [], invoices = [] } = useReception();
@@ -12,10 +13,9 @@ const ReceptionDashboard = ({ setActiveTab }) => {
     const [notificationSuccess, setNotificationSuccess] = useState(false);
 
     useEffect(() => {
-        fetch('/api/v1/users/public/doctors')
-            .then(res => res.json())
+        publicService.getDoctors()
             .then(d => {
-                if (d.success && d.data) setDoctors(d.data);
+                if (Array.isArray(d)) setDoctors(d);
             })
             .catch(err => console.error('Failed to load public doctors:', err));
     }, []);
