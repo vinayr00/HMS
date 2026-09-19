@@ -1,0 +1,782 @@
+{
+  "communities": {
+    "0": [
+      "ref_express",
+      "ref_jsonwebtoken",
+      "server_config_db",
+      "server_config_db_connectdb",
+      "server_controllers_appointmentcontroller",
+      "server_controllers_appointmentcontroller_create",
+      "server_controllers_appointmentcontroller_getall",
+      "server_controllers_appointmentcontroller_updatestatus",
+      "server_controllers_auditcontroller",
+      "server_controllers_auditcontroller_getlogs",
+      "server_controllers_authcontroller",
+      "server_controllers_authcontroller_login",
+      "server_controllers_authcontroller_me",
+      "server_controllers_invoicecontroller",
+      "server_controllers_invoicecontroller_create",
+      "server_controllers_invoicecontroller_getall",
+      "server_controllers_invoicecontroller_markpaid",
+      "server_controllers_invoicecontroller_refund",
+      "server_controllers_medicinecontroller",
+      "server_controllers_medicinecontroller_create",
+      "server_controllers_medicinecontroller_getall",
+      "server_controllers_medicinecontroller_remove",
+      "server_controllers_medicinecontroller_update",
+      "server_controllers_patientcontroller",
+      "server_controllers_patientcontroller_create",
+      "server_controllers_patientcontroller_getall",
+      "server_controllers_patientcontroller_getone",
+      "server_controllers_prescriptioncontroller",
+      "server_controllers_prescriptioncontroller_create",
+      "server_controllers_prescriptioncontroller_dispense",
+      "server_controllers_prescriptioncontroller_getall",
+      "server_controllers_prescriptioncontroller_reject",
+      "server_controllers_taskcontroller",
+      "server_controllers_taskcontroller_getmine",
+      "server_controllers_taskcontroller_updatestatus",
+      "server_controllers_usercontroller",
+      "server_controllers_usercontroller_create",
+      "server_controllers_usercontroller_getall",
+      "server_controllers_usercontroller_remove",
+      "server_controllers_usercontroller_togglestatus",
+      "server_controllers_usercontroller_update",
+      "server_index",
+      "server_index_app",
+      "server_middleware_auth",
+      "server_middleware_auth_verifytoken",
+      "server_middleware_roles",
+      "server_middleware_roles_requirerole",
+      "server_models_auditlog",
+      "server_models_auditlog_auditlogschema",
+      "server_routes_appointments",
+      "server_routes_appointments_router",
+      "server_routes_audit",
+      "server_routes_audit_router",
+      "server_routes_auth",
+      "server_routes_auth_router",
+      "server_routes_invoices",
+      "server_routes_invoices_router",
+      "server_routes_medicines",
+      "server_routes_medicines_router",
+      "server_routes_patients",
+      "server_routes_patients_router",
+      "server_routes_prescriptions",
+      "server_routes_prescriptions_router",
+      "server_routes_tasks",
+      "server_routes_tasks_router",
+      "server_routes_users",
+      "server_routes_users_router",
+      "server_utils_auditlogger",
+      "server_utils_auditlogger_writelog"
+    ],
+    "1": [
+      "ref_lucide_react",
+      "ref_react_router_dom",
+      "src_app_router",
+      "src_assets_hms_logo",
+      "src_assets_home",
+      "src_assets_loginbg",
+      "src_components_admin_layout_adminsidebar",
+      "src_components_admin_layout_adminsidebar_adminsidebar",
+      "src_components_common_button",
+      "src_components_common_button_button",
+      "src_components_common_emptystate",
+      "src_components_common_emptystate_emptystate",
+      "src_components_common_footer",
+      "src_components_common_footer_footer",
+      "src_components_common_navbar",
+      "src_components_common_navbar_navbar",
+      "src_components_common_protectedroute",
+      "src_components_common_protectedroute_protectedroute",
+      "src_components_common_sidebar",
+      "src_components_common_sidebar_sidebar",
+      "src_components_doctor_layout_doctorsidebar",
+      "src_components_doctor_layout_doctorsidebar_doctorsidebar",
+      "src_components_doctor_modals_changepasswordmodal",
+      "src_components_doctor_modals_changepasswordmodal_changepasswordmodal",
+      "src_components_doctor_pages_doctorprofile",
+      "src_components_doctor_pages_doctorprofile_doctorprofile",
+      "src_components_receptionist_layout_receptionsidebar",
+      "src_components_receptionist_layout_receptionsidebar_receptionsidebar",
+      "src_components_receptionist_modals_changepasswordmodal",
+      "src_components_receptionist_modals_changepasswordmodal_changepasswordmodal",
+      "src_components_receptionist_pages_receptionprofile",
+      "src_components_receptionist_pages_receptionprofile_receptionprofile",
+      "src_components_staff_layout_staffsidebar",
+      "src_components_staff_layout_staffsidebar_staffsidebar",
+      "src_components_ui_button",
+      "src_components_ui_button_button",
+      "src_hooks_useauth",
+      "src_hooks_useauth_useauth",
+      "src_layouts_authlayout",
+      "src_layouts_authlayout_authlayout",
+      "src_layouts_dashboardlayout",
+      "src_layouts_dashboardlayout_dashboardlayout",
+      "src_layouts_publiclayout",
+      "src_layouts_publiclayout_publiclayout",
+      "src_pages_auth_login",
+      "src_pages_auth_login_login",
+      "src_pages_notfound",
+      "src_pages_notfound_notfound",
+      "src_pages_portals_patientportal",
+      "src_pages_portals_patientportal_dummy_doctors",
+      "src_pages_portals_patientportal_patientportal",
+      "src_pages_public_about",
+      "src_pages_public_about_about",
+      "src_pages_public_home",
+      "src_pages_public_home_home",
+      "src_pages_public_patientform",
+      "src_pages_public_patientform_patientform",
+      "src_pages_unauthorized",
+      "src_pages_unauthorized_unauthorized",
+      "src_services_patient_service",
+      "src_services_patient_service_patientservice",
+      "src_utils_hospital"
+    ],
+    "2": [
+      "ref_bcryptjs",
+      "ref_cors",
+      "ref_dotenv",
+      "ref_dotenv_config",
+      "ref_express_async_errors",
+      "ref_express_validator",
+      "ref_helmet",
+      "ref_mongoose",
+      "server_models_appointment",
+      "server_models_appointment_appointmentschema",
+      "server_models_invoice",
+      "server_models_invoice_invoiceitemschema",
+      "server_models_invoice_invoiceschema",
+      "server_models_medicine",
+      "server_models_medicine_medicineschema",
+      "server_models_patient",
+      "server_models_patient_patientschema",
+      "server_models_prescription",
+      "server_models_prescription_prescriptionitemschema",
+      "server_models_prescription_prescriptionschema",
+      "server_models_task",
+      "server_models_task_taskschema",
+      "server_models_user",
+      "server_models_user_userschema",
+      "server_package",
+      "server_package_dependencies",
+      "server_package_dependencies_bcryptjs",
+      "server_package_dependencies_cors",
+      "server_package_dependencies_dotenv",
+      "server_package_dependencies_express",
+      "server_package_dependencies_express_async_errors",
+      "server_package_dependencies_express_validator",
+      "server_package_dependencies_helmet",
+      "server_package_dependencies_jsonwebtoken",
+      "server_package_dependencies_mongoose",
+      "server_package_description",
+      "server_package_main",
+      "server_package_name",
+      "server_package_scripts",
+      "server_package_scripts_dev",
+      "server_package_scripts_seed",
+      "server_package_scripts_start",
+      "server_package_type",
+      "server_package_version",
+      "server_seed",
+      "server_seed_medicines",
+      "server_seed_seed",
+      "server_seed_users"
+    ],
+    "3": [
+      "eslint_config",
+      "package",
+      "package_dependencies",
+      "package_dependencies_jspdf",
+      "package_dependencies_jspdf_autotable",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_router_dom",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_js",
+      "package_devdependencies_eslint_plugin_react_hooks",
+      "package_devdependencies_eslint_plugin_react_refresh",
+      "package_devdependencies_gh_pages",
+      "package_devdependencies_globals",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react",
+      "package_homepage",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_deploy",
+      "package_scripts_dev",
+      "package_scripts_predeploy",
+      "package_scripts_preview",
+      "package_type",
+      "package_version",
+      "ref_eslint",
+      "ref_eslint_config",
+      "ref_eslint_js",
+      "ref_eslint_plugin_react_hooks",
+      "ref_eslint_plugin_react_refresh",
+      "ref_gh_pages",
+      "ref_globals",
+      "ref_react_dom",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "vite_config"
+    ],
+    "4": [
+      "ref_jspdf",
+      "ref_jspdf_autotable",
+      "src_assets_reception",
+      "src_components_receptionist_pages_receptionappointments",
+      "src_components_receptionist_pages_receptionappointments_receptionappointments",
+      "src_components_receptionist_pages_receptionbilling",
+      "src_components_receptionist_pages_receptionbilling_receptionbilling",
+      "src_components_receptionist_pages_receptiondashboard",
+      "src_components_receptionist_pages_receptiondashboard_initialurgentitems",
+      "src_components_receptionist_pages_receptiondashboard_receptiondashboard",
+      "src_components_receptionist_pages_receptionqueue",
+      "src_components_receptionist_pages_receptionqueue_receptionqueue",
+      "src_components_receptionist_pages_receptionregistration",
+      "src_components_receptionist_pages_receptionregistration_receptionregistration",
+      "src_context_receptioncontext",
+      "src_context_receptioncontext_receptioncontext",
+      "src_context_receptioncontext_receptionprovider",
+      "src_context_receptioncontext_usereception",
+      "src_pages_portals_receptionistportal",
+      "src_pages_portals_receptionistportal_placeholderpage",
+      "src_pages_portals_receptionistportal_receptionistportal",
+      "src_pages_public_feedback",
+      "src_pages_public_feedback_categories",
+      "src_pages_public_feedback_feedback",
+      "src_services_api",
+      "src_services_api_apiclient",
+      "src_services_api_gettoken",
+      "src_services_api_request",
+      "src_services_appointment_service",
+      "src_services_appointment_service_appointmentservice",
+      "src_services_invoice_service",
+      "src_services_invoice_service_invoiceservice",
+      "src_services_prescription_service",
+      "src_services_prescription_service_prescriptionservice",
+      "src_services_task_service",
+      "src_services_task_service_taskservice",
+      "src_styles_receptionist_portal"
+    ],
+    "5": [
+      "src_assets_admin",
+      "src_components_admin_modals_addusermodal",
+      "src_components_admin_modals_addusermodal_addusermodal",
+      "src_components_admin_pages_adminfinance",
+      "src_components_admin_pages_adminfinance_adminfinance",
+      "src_components_admin_pages_adminlogs",
+      "src_components_admin_pages_adminlogs_adminlogs",
+      "src_components_admin_pages_adminoverview",
+      "src_components_admin_pages_adminoverview_adminoverview",
+      "src_components_admin_pages_adminoverview_kpicard",
+      "src_components_admin_pages_adminsettings",
+      "src_components_admin_pages_adminsettings_adminsettings",
+      "src_components_admin_pages_adminusers",
+      "src_components_admin_pages_adminusers_adminusers",
+      "src_context_admincontext",
+      "src_context_admincontext_admincontext",
+      "src_context_admincontext_adminprovider",
+      "src_context_admincontext_useadmin",
+      "src_pages_portals_adminportal",
+      "src_pages_portals_adminportal_adminportal",
+      "src_services_admin_service",
+      "src_services_admin_service_adminservice"
+    ],
+    "6": [
+      "src_assets_medicine",
+      "src_components_pharmacy_pages_pharmacydashboard",
+      "src_components_pharmacy_pages_pharmacydashboard_pharmacydashboard",
+      "src_components_pharmacy_pages_pharmacydispense",
+      "src_components_pharmacy_pages_pharmacydispense_pharmacydispense",
+      "src_components_pharmacy_pages_pharmacyinventory",
+      "src_components_pharmacy_pages_pharmacyinventory_pharmacyinventory",
+      "src_components_pharmacy_pages_pharmacyorders",
+      "src_components_pharmacy_pages_pharmacyorders_pharmacyorders",
+      "src_components_pharmacy_pages_pharmacyprofile",
+      "src_components_pharmacy_pages_pharmacyprofile_pharmacyprofile",
+      "src_components_pharmacy_pages_pharmacyreports",
+      "src_components_pharmacy_pages_pharmacyreports_pharmacyreports",
+      "src_context_pharmacycontext",
+      "src_context_pharmacycontext_pharmacycontext",
+      "src_context_pharmacycontext_pharmacyprovider",
+      "src_context_pharmacycontext_usepharmacy",
+      "src_pages_portals_pharmacyportal",
+      "src_pages_portals_pharmacyportal_pharmacyportal",
+      "src_services_medicine_service",
+      "src_services_medicine_service_medicineservice",
+      "src_styles_pharmacy_portal"
+    ],
+    "7": [
+      "ref_react_dom_client",
+      "src_app_app",
+      "src_app_app_app",
+      "src_app_router_router",
+      "src_context_authcontext",
+      "src_context_authcontext_authcontext",
+      "src_context_authcontext_authprovider",
+      "src_context_authcontext_useauthcontext",
+      "src_context_toastcontext",
+      "src_context_toastcontext_toastcontext",
+      "src_context_toastcontext_toastprovider",
+      "src_context_toastcontext_usetoast",
+      "src_main",
+      "src_services_auth_service",
+      "src_services_auth_service_authservice",
+      "src_styles_components",
+      "src_styles_dashboard",
+      "src_styles_global",
+      "src_styles_layout",
+      "src_styles_main",
+      "src_styles_pages"
+    ],
+    "8": [
+      "src_assets_staff",
+      "src_components_staff_modals_changepasswordmodal",
+      "src_components_staff_modals_changepasswordmodal_changepasswordmodal",
+      "src_components_staff_pages_staffdashboard",
+      "src_components_staff_pages_staffdashboard_staffdashboard",
+      "src_components_staff_pages_staffprofile",
+      "src_components_staff_pages_staffprofile_staffprofile",
+      "src_components_staff_pages_staffschedule",
+      "src_components_staff_pages_staffschedule_staffschedule",
+      "src_components_staff_pages_stafftasks",
+      "src_components_staff_pages_stafftasks_stafftasks",
+      "src_context_staffcontext",
+      "src_context_staffcontext_initial_schedule",
+      "src_context_staffcontext_staffcontext",
+      "src_context_staffcontext_staffprovider",
+      "src_context_staffcontext_usestaff",
+      "src_pages_dashboard_staffdashboard",
+      "src_pages_dashboard_staffdashboard_staffdashboard",
+      "src_pages_portals_staffportal",
+      "src_pages_portals_staffportal_staffportal",
+      "src_styles_doctor_portal"
+    ],
+    "9": [
+      "src_assets_doctor",
+      "src_components_doctor_modals_addclinicalnotemodal",
+      "src_components_doctor_modals_addclinicalnotemodal_addclinicalnotemodal",
+      "src_components_doctor_modals_labreportspanel",
+      "src_components_doctor_modals_labreportspanel_labreportspanel",
+      "src_components_doctor_modals_schedulefollowupmodal",
+      "src_components_doctor_modals_schedulefollowupmodal_schedulefollowupmodal",
+      "src_components_doctor_pages_doctorappointments",
+      "src_components_doctor_pages_doctorappointments_doctorappointments",
+      "src_components_doctor_pages_doctordashboard",
+      "src_components_doctor_pages_doctordashboard_doctordashboard",
+      "src_components_doctor_pages_doctormedicalrecords",
+      "src_components_doctor_pages_doctormedicalrecords_doctormedicalrecords",
+      "src_components_doctor_pages_doctormedicalrecords_initialrecords",
+      "src_components_doctor_pages_doctorpatients",
+      "src_components_doctor_pages_doctorpatients_doctorpatients",
+      "src_components_doctor_pages_doctorpatients_initialpatients",
+      "src_pages_portals_doctorportal",
+      "src_pages_portals_doctorportal_doctorportal",
+      "src_pages_portals_doctorportal_initialappointments"
+    ],
+    "10": [
+      "ref_react",
+      "src_components_auth_registerform",
+      "src_components_auth_registerform_registerform",
+      "src_components_common_skeleton",
+      "src_components_common_skeleton_skeleton",
+      "src_components_doctor_prescriptionform",
+      "src_components_doctor_prescriptionform_prescriptionform",
+      "src_components_pharmacy_billingform",
+      "src_components_pharmacy_billingform_billingform",
+      "src_components_pharmacy_inventoryform",
+      "src_components_pharmacy_inventoryform_inventoryform",
+      "src_components_pharmacy_invoicecard",
+      "src_components_pharmacy_invoicecard_invoicecard",
+      "src_components_receptionist_appointmentmanager",
+      "src_components_receptionist_appointmentmanager_appointmentmanager",
+      "src_pages_dashboard_doctor_doctorappointments",
+      "src_pages_dashboard_doctor_doctorappointments_doctorappointments"
+    ],
+    "11": [
+      "src_components_feedback_feedbackform",
+      "src_components_feedback_feedbackform_feedbackform",
+      "src_components_feedback_feedbacklist",
+      "src_components_feedback_feedbacklist_feedbacklist",
+      "src_components_feedback_ratingstars",
+      "src_components_feedback_ratingstars_ratingstars"
+    ],
+    "12": [
+      "src_components_doctor_patientcard",
+      "src_components_doctor_patientcard_patientcard",
+      "src_components_doctor_patientlist",
+      "src_components_doctor_patientlist_patientlist"
+    ],
+    "13": [
+      "src_components_home_doctorcard",
+      "src_components_home_doctorcard_doctorcard",
+      "src_components_home_doctorlist",
+      "src_components_home_doctorlist_doctorlist"
+    ],
+    "14": [
+      "src_utils_constants",
+      "src_utils_constants_roles",
+      "src_utils_constants_routes"
+    ],
+    "15": [
+      "src_components_auth_loginform",
+      "src_components_auth_loginform_loginform"
+    ],
+    "16": [
+      "src_components_auth_roleselector",
+      "src_components_auth_roleselector_roleselector"
+    ],
+    "17": [
+      "src_components_common_loader",
+      "src_components_common_loader_loader"
+    ],
+    "18": [
+      "src_components_common_modal",
+      "src_components_common_modal_modal"
+    ],
+    "19": [
+      "src_components_common_notfound",
+      "src_components_common_notfound_notfound"
+    ],
+    "20": [
+      "src_components_doctor_appointmenttable",
+      "src_components_doctor_appointmenttable_appointmenttable"
+    ],
+    "21": [
+      "src_components_doctor_doctorstats",
+      "src_components_doctor_doctorstats_doctorstats"
+    ],
+    "22": [
+      "src_components_doctor_todolist",
+      "src_components_doctor_todolist_todolist"
+    ],
+    "23": [
+      "src_components_home_appointmentform",
+      "src_components_home_appointmentform_appointmentform"
+    ],
+    "24": [
+      "src_components_home_herosection",
+      "src_components_home_herosection_herosection"
+    ],
+    "25": [
+      "src_components_home_hospitalmap",
+      "src_components_home_hospitalmap_hospitalmap"
+    ],
+    "26": [
+      "src_components_pharmacy_medicinetable",
+      "src_components_pharmacy_medicinetable_medicinetable"
+    ],
+    "27": [
+      "src_components_pharmacy_prescriptionlist",
+      "src_components_pharmacy_prescriptionlist_prescriptionlist"
+    ],
+    "28": [
+      "src_components_receptionist_doctoravailability",
+      "src_components_receptionist_doctoravailability_doctoravailability"
+    ],
+    "29": [
+      "src_components_receptionist_patientcard",
+      "src_components_receptionist_patientcard_patientcard"
+    ],
+    "30": [
+      "src_components_receptionist_patientform",
+      "src_components_receptionist_patientform_patientform"
+    ],
+    "31": [
+      "src_components_receptionist_patienthistory",
+      "src_components_receptionist_patienthistory_patienthistory"
+    ],
+    "32": [
+      "src_components_receptionist_shifttable",
+      "src_components_receptionist_shifttable_shifttable"
+    ],
+    "33": [
+      "src_components_ui_card",
+      "src_components_ui_card_card"
+    ],
+    "34": [
+      "src_pages_dashboard_admindashboard",
+      "src_pages_dashboard_admindashboard_admindashboard"
+    ],
+    "35": [
+      "src_pages_dashboard_doctor_doctorpatients",
+      "src_pages_dashboard_doctor_doctorpatients_doctorpatients"
+    ],
+    "36": [
+      "src_pages_dashboard_doctor_doctorprescriptions",
+      "src_pages_dashboard_doctor_doctorprescriptions_doctorprescriptions"
+    ],
+    "37": [
+      "src_pages_dashboard_doctor_doctorprofile",
+      "src_pages_dashboard_doctor_doctorprofile_doctorprofile"
+    ],
+    "38": [
+      "src_pages_dashboard_doctordashboard",
+      "src_pages_dashboard_doctordashboard_doctordashboard"
+    ],
+    "39": [
+      "src_pages_dashboard_patientdashboard",
+      "src_pages_dashboard_patientdashboard_patientdashboard"
+    ],
+    "40": [
+      "src_pages_dashboard_pharmacy_billing",
+      "src_pages_dashboard_pharmacy_billing_billing"
+    ],
+    "41": [
+      "src_pages_dashboard_pharmacy_inventory",
+      "src_pages_dashboard_pharmacy_inventory_inventory"
+    ],
+    "42": [
+      "src_pages_dashboard_pharmacy_invoicehistory",
+      "src_pages_dashboard_pharmacy_invoicehistory_invoicehistory"
+    ],
+    "43": [
+      "src_pages_dashboard_pharmacy_pharmacydashboard",
+      "src_pages_dashboard_pharmacy_pharmacydashboard_pharmacydashboard"
+    ],
+    "44": [
+      "src_pages_dashboard_pharmacy_prescriptions",
+      "src_pages_dashboard_pharmacy_prescriptions_prescriptions"
+    ],
+    "45": [
+      "src_pages_dashboard_receptionist_doctorshifts",
+      "src_pages_dashboard_receptionist_doctorshifts_doctorshifts"
+    ],
+    "46": [
+      "src_pages_dashboard_receptionist_manageappointments",
+      "src_pages_dashboard_receptionist_manageappointments_manageappointments"
+    ],
+    "47": [
+      "src_pages_dashboard_receptionist_patientrecords",
+      "src_pages_dashboard_receptionist_patientrecords_patientrecords"
+    ],
+    "48": [
+      "src_pages_dashboard_receptionist_receptionistdashboard",
+      "src_pages_dashboard_receptionist_receptionistdashboard_receptionistdashboard"
+    ],
+    "49": [
+      "src_pages_dashboard_receptionist_walkinpatients",
+      "src_pages_dashboard_receptionist_walkinpatients_walkinpatients"
+    ],
+    "50": [
+      "src_pages_public_notfound",
+      "src_pages_public_notfound_notfound"
+    ],
+    "51": [
+      "vercel",
+      "vercel_rewrites"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07757885763000852,
+    "1": 0.07985193019566367,
+    "2": 0.04521276595744681,
+    "3": 0.049682875264270614,
+    "4": 0.09009009009009009,
+    "5": 0.1774891774891775,
+    "6": 0.20346320346320346,
+    "7": 0.11428571428571428,
+    "8": 0.21428571428571427,
+    "9": 0.1368421052631579,
+    "10": 0.11764705882352941,
+    "11": 0.4666666666666667,
+    "12": 0.6666666666666666,
+    "13": 0.6666666666666666,
+    "14": 0.6666666666666666,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0
+  },
+  "gods": [
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 121
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "degree": 51
+    },
+    {
+      "id": "server_utils_auditlogger_writelog",
+      "label": "writeLog()",
+      "degree": 27
+    },
+    {
+      "id": "src_hooks_useauth_useauth",
+      "label": "useAuth()",
+      "degree": 25
+    },
+    {
+      "id": "ref_react_router_dom",
+      "label": "react-router-dom",
+      "degree": 22
+    },
+    {
+      "id": "src_context_pharmacycontext_usepharmacy",
+      "label": "usePharmacy()",
+      "degree": 13
+    },
+    {
+      "id": "src_context_staffcontext_usestaff",
+      "label": "useStaff()",
+      "degree": 11
+    },
+    {
+      "id": "ref_express",
+      "label": "express",
+      "degree": 11
+    },
+    {
+      "id": "ref_mongoose",
+      "label": "mongoose",
+      "degree": 11
+    },
+    {
+      "id": "server_middleware_auth_verifytoken",
+      "label": "verifyToken()",
+      "degree": 10
+    }
+  ],
+  "surprises": [
+    {
+      "source": "StaffSidebar()",
+      "target": "useStaff()",
+      "source_files": [
+        "src/components/staff/layout/StaffSidebar.jsx",
+        "src/context/StaffContext.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "DashboardLayout()",
+      "target": "useAuth()",
+      "source_files": [
+        "src/layouts/DashboardLayout.jsx",
+        "src/hooks/useAuth.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `DashboardLayout()` unexpectedly reaches hub `useAuth()`"
+    },
+    {
+      "source": "PharmacyPortal()",
+      "target": "useAuth()",
+      "source_files": [
+        "src/pages/portals/PharmacyPortal.jsx",
+        "src/hooks/useAuth.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "create()",
+      "target": "writeLog()",
+      "source_files": [
+        "server/controllers/appointmentController.js",
+        "server/utils/auditLogger.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "updateStatus()",
+      "target": "writeLog()",
+      "source_files": [
+        "server/controllers/appointmentController.js",
+        "server/utils/auditLogger.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `react` connect `react` to `lucide-react`, `package.json`, `ReceptionistPortal.jsx`, `AdminPortal.jsx`, `PharmacyPortal.jsx`, `App.jsx`, `StaffPortal.jsx`, `DoctorPortal.jsx`, `FeedbackForm.jsx`, `PatientList.jsx`, `DoctorList.jsx`, `LoginForm.jsx`, `RoleSelector.jsx`, `Loader.jsx`, `Modal.jsx`, `common/NotFound.jsx`, `AppointmentTable.jsx`, `DoctorStats.jsx`, `ToDoList.jsx`, `AppointmentForm.jsx`, `HeroSection.jsx`, `HospitalMap.jsx`, `MedicineTable.jsx`, `PrescriptionList.jsx`, `DoctorAvailability.jsx`, `receptionist/PatientCard.jsx`, `receptionist/PatientForm.jsx`, `PatientHistory.jsx`, `ShiftTable.jsx`, `Card.jsx`, `AdminDashboard.jsx`, `doctor/DoctorPatients.jsx`, `DoctorPrescriptions.jsx`, `doctor/DoctorProfile.jsx`, `dashboard/DoctorDashboard.jsx`, `PatientDashboard.jsx`, `Billing.jsx`, `Inventory.jsx`, `InvoiceHistory.jsx`, `pharmacy/PharmacyDashboard.jsx`, `Prescriptions.jsx`, `DoctorShifts.jsx`, `ManageAppointments.jsx`, `PatientRecords.jsx`, `ReceptionistDashboard.jsx`, `WalkInPatients.jsx`, `public/NotFound.jsx`?",
+      "why": "High betweenness centrality (0.422) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `lucide-react` connect `lucide-react` to `package.json`, `ReceptionistPortal.jsx`, `AdminPortal.jsx`, `PharmacyPortal.jsx`, `App.jsx`, `StaffPortal.jsx`, `DoctorPortal.jsx`?",
+      "why": "High betweenness centrality (0.043) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `app`, `auditLogSchema`, `DUMMY_DOCTORS` to the rest of the system?",
+      "why": "78 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `writeLog` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07757885763000852 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `lucide-react` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07985193019566367 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `server/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.04521276595744681 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.049682875264270614 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
