@@ -6,9 +6,9 @@
     "semantic_hash": "3ac995fbf93552a991ecab9b63f776aa"
   },
   "package.json": {
-    "mtime": 1789789763.1027987,
-    "seen": 1789789848.8160772,
-    "ast_hash": "82b8ca1aa07f3bb65dd19e69188976b1",
+    "mtime": 1789823874.6255875,
+    "seen": 1789823970.833293,
+    "ast_hash": "72127c7d8e6193b2c45f25883d3ae0b4",
     "semantic_hash": ""
   },
   "server/config/db.js": {
@@ -210,9 +210,9 @@
     "semantic_hash": "e6e6563c3742faebe5be252c46361063"
   },
   "vercel.json": {
-    "mtime": 1789793042.1956866,
-    "seen": 1789793170.0909436,
-    "ast_hash": "0db7ccb3aff36e97aa469126e9e17f99",
+    "mtime": 1789823904.5038064,
+    "seen": 1789823970.8333395,
+    "ast_hash": "c027dfd70e3f4fbea9a277a14f28e04a",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "client/package.json": {
-    "mtime": 1789789756.374522,
-    "seen": 1789789848.8159935,
-    "ast_hash": "d72692a262de7478c9028674f9ecf15b",
+    "mtime": 1789823807.535237,
+    "seen": 1789823970.8331757,
+    "ast_hash": "e98deacc0ed64cb914e42aa5f6b7c63d",
     "semantic_hash": ""
   },
   "client/src/app/App.jsx": {
@@ -840,9 +840,9 @@
     "semantic_hash": ""
   },
   "client/vercel.json": {
-    "mtime": 1789793033.6832514,
-    "seen": 1789793170.0908947,
-    "ast_hash": "0db7ccb3aff36e97aa469126e9e17f99",
+    "mtime": 1789823909.805424,
+    "seen": 1789823970.83329,
+    "ast_hash": "92c86ee1f9a4656253ae9ceaf264b4d1",
     "semantic_hash": ""
   },
   "client/vite.config.js": {

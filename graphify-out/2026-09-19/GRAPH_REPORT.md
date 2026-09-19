@@ -1,17 +1,17 @@
 # Graph Report - HMS  (2026-09-19)
 
 ## Corpus Check
-- 146 files · ~379,894 words
+- 146 files · ~379,934 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 13 file(s) not represented in the graph (top: .css 11, (none) 2)
 
 ## Summary
-- 528 nodes · 1023 edges · 54 communities (26 shown, 28 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 39 edges (avg confidence: 0.85)
+- 529 nodes · 1024 edges · 54 communities (26 shown, 28 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2d155988`
+- Built from commit: `7a7ee0d0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,15 +23,15 @@
 - src_assets_doctor
 - src_assets_admin
 - src_assets_medicine
-- lucide-react
+- useAuth
 - src_assets_staff
 - seed.js
 - react
 - What You Must Do When Invoked
 - 🏥 ProHealth — Hospital Management System (HMS)
-- DoctorPortal.jsx
+- api.js
 - StaffPortal.jsx
-- PharmacyPortal.jsx
+- ReceptionistPortal.jsx
 - graphify reference: extra exports and benchmark
 - scripts
 - graphify reference: query, path, explain
@@ -64,7 +64,7 @@
 - middleware/auth.js
 - index.js
 - writeLog
-- auditLogger.js
+- express
 - invoices.js
 - medicines.js
 - vercel.json
@@ -84,16 +84,16 @@
 10. `What You Must Do When Invoked` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `AdminSidebar()` --calls--> `useAuth()`  [EXTRACTED]
+  client/src/components/admin/layout/AdminSidebar.jsx → client/src/hooks/useAuth.js
 - `Navbar()` --calls--> `useAuth()`  [EXTRACTED]
   client/src/components/common/Navbar.jsx → client/src/hooks/useAuth.js
 - `ProtectedRoute()` --calls--> `useAuth()`  [EXTRACTED]
   client/src/components/common/ProtectedRoute.jsx → client/src/hooks/useAuth.js
 - `Sidebar()` --calls--> `useAuth()`  [EXTRACTED]
   client/src/components/common/Sidebar.jsx → client/src/hooks/useAuth.js
-- `StaffSidebar()` --calls--> `useStaff()`  [EXTRACTED]
-  client/src/components/staff/layout/StaffSidebar.jsx → client/src/context/StaffContext.jsx
-- `PharmacyProvider()` --calls--> `useAuth()`  [EXTRACTED]
-  client/src/context/PharmacyContext.jsx → client/src/hooks/useAuth.js
+- `ReceptionDashboard()` --calls--> `useAuth()`  [EXTRACTED]
+  client/src/components/receptionist/pages/ReceptionDashboard.jsx → client/src/hooks/useAuth.js
 
 ## Import Cycles
 - None detected.
@@ -101,11 +101,11 @@
 ## Communities (54 total, 28 thin omitted)
 
 ### Community 0 - "patients.js"
-Cohesion: 0.53
-Nodes (4): create(), getAll(), getOne(), router
+Cohesion: 0.31
+Nodes (5): create(), getAll(), getOne(), auditLogSchema, router
 
 ### Community 1 - "router.jsx"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (33): App(), router, client_src_assets_hms_logo, client_src_assets_home, client_src_assets_loginbg, Button(), Footer(), Navbar() (+25 more)
 
 ### Community 2 - "server/package.json"
@@ -116,17 +116,17 @@ Nodes (27): cors, dotenv, express-async-errors, express-rate-limit, express-vali
 Cohesion: 0.05
 Nodes (44): dependencies, jspdf, jspdf-autotable, lucide-react, react, react-dom, react-router-dom, devDependencies (+36 more)
 
-### Community 7 - "lucide-react"
-Cohesion: 0.12
-Nodes (21): client_src_assets_reception, AdminSidebar(), Sidebar(), DoctorSidebar(), ChangePasswordModal(), DoctorDashboard(), DoctorProfile(), ReceptionSidebar() (+13 more)
+### Community 7 - "useAuth"
+Cohesion: 0.13
+Nodes (16): client_src_assets_doctor, Sidebar(), DoctorSidebar(), ChangePasswordModal(), DoctorAppointments(), DoctorDashboard(), DoctorMedicalRecords(), DoctorProfile() (+8 more)
 
 ### Community 9 - "seed.js"
 Cohesion: 0.12
 Nodes (13): ref_dotenv_config, mongoose, connectDB(), appointmentSchema, invoiceItemSchema, invoiceSchema, medicineSchema, patientSchema (+5 more)
 
 ### Community 10 - "react"
-Cohesion: 0.08
-Nodes (16): client_src_assets_admin, AddUserModal(), AdminFinance(), AdminLogs(), AdminOverview(), AdminSettings(), AdminUsers(), AddClinicalNoteModal() (+8 more)
+Cohesion: 0.07
+Nodes (29): client_src_assets_admin, client_src_assets_medicine, AdminSidebar(), AddUserModal(), AdminFinance(), AdminLogs(), AdminOverview(), AdminSettings() (+21 more)
 
 ### Community 11 - "What You Must Do When Invoked"
 Cohesion: 0.07
@@ -136,17 +136,17 @@ Nodes (26): For /graphify add and --watch, For /graphify query, For the commit h
 Cohesion: 0.10
 Nodes (19): Building for Production, 🤝 Contributing, 🔑 Demo Credentials, 🌐 Deployment, 🌟 Features Overview, 🚀 Getting Started, GitHub Pages, Installation (+11 more)
 
-### Community 13 - "DoctorPortal.jsx"
-Cohesion: 0.11
-Nodes (17): client_src_assets_doctor, DoctorAppointments(), DoctorMedicalRecords(), AuthContext, AuthProvider(), DoctorPortal(), CATEGORIES, Feedback() (+9 more)
+### Community 13 - "api.js"
+Cohesion: 0.15
+Nodes (11): AuthContext, AuthProvider(), CATEGORIES, Feedback(), adminService, apiClient, getToken(), request() (+3 more)
 
 ### Community 14 - "StaffPortal.jsx"
 Cohesion: 0.19
 Nodes (13): client_src_assets_staff, ChangePasswordModal(), StaffDashboard(), StaffProfile(), StaffSchedule(), StaffTasks(), INITIAL_SCHEDULE, StaffContext (+5 more)
 
-### Community 15 - "PharmacyPortal.jsx"
-Cohesion: 0.23
-Nodes (12): client_src_assets_medicine, PharmacyDashboard(), PharmacyDispense(), PharmacyInventory(), PharmacyOrders(), PharmacyProfile(), PharmacyReports(), PharmacyContext (+4 more)
+### Community 15 - "ReceptionistPortal.jsx"
+Cohesion: 0.24
+Nodes (10): client_src_assets_reception, ReceptionAppointments(), ReceptionBilling(), ReceptionDashboard(), ReceptionQueue(), ReceptionContext, ReceptionProvider(), useReception() (+2 more)
 
 ### Community 16 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
@@ -177,24 +177,24 @@ Cohesion: 0.31
 Nodes (6): bcryptjs, jsonwebtoken, login(), me(), verifyToken(), userSchema
 
 ### Community 46 - "index.js"
-Cohesion: 0.16
-Nodes (12): express, ref_path, ref_url, bookAppointment(), allowedOrigins, app, corsOptions, __dirname (+4 more)
+Cohesion: 0.15
+Nodes (11): ref_path, ref_url, bookAppointment(), allowedOrigins, app, corsOptions, __dirname, rawOrigins (+3 more)
 
 ### Community 47 - "writeLog"
 Cohesion: 0.50
 Nodes (7): create(), getAll(), getPublicDoctors(), remove(), toggleStatus(), update(), writeLog()
 
-### Community 48 - "auditLogger.js"
-Cohesion: 0.32
-Nodes (4): getMine(), updateStatus(), auditLogSchema, router
+### Community 48 - "express"
+Cohesion: 0.26
+Nodes (7): express, getLogs(), getMine(), updateStatus(), requireRole(), router, router
 
 ### Community 49 - "invoices.js"
 Cohesion: 0.48
 Nodes (5): create(), getAll(), markPaid(), refund(), router
 
 ### Community 50 - "medicines.js"
-Cohesion: 0.24
-Nodes (8): getLogs(), create(), getAll(), remove(), update(), requireRole(), router, router
+Cohesion: 0.48
+Nodes (5): create(), getAll(), remove(), update(), router
 
 ### Community 52 - "prescriptions.js"
 Cohesion: 0.48
@@ -206,23 +206,23 @@ Nodes (4): create(), getAll(), updateStatus(), router
 
 ## Knowledge Gaps
 - **158 isolated node(s):** `name`, `private`, `version`, `type`, `homepage` (+153 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 228 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 229 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **28 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `router.jsx`, `client/package.json`, `lucide-react`, `DoctorPortal.jsx`, `StaffPortal.jsx`, `PharmacyPortal.jsx`?**
-  _High betweenness centrality (0.135) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `lucide-react` to `router.jsx`, `client/package.json`, `react`, `DoctorPortal.jsx`, `StaffPortal.jsx`, `PharmacyPortal.jsx`?**
+- **Why does `react` connect `react` to `router.jsx`, `client/package.json`, `useAuth`, `api.js`, `StaffPortal.jsx`, `ReceptionistPortal.jsx`?**
+  _High betweenness centrality (0.134) - this node is a cross-community bridge._
+- **Why does `lucide-react` connect `react` to `router.jsx`, `client/package.json`, `useAuth`, `api.js`, `StaffPortal.jsx`, `ReceptionistPortal.jsx`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _158 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `router.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.06558441558441558 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.062310949788263764 - nodes in this community are weakly interconnected._
 - **Should `server/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `client/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.04625346901017576 - nodes in this community are weakly interconnected._
-- **Should `lucide-react` be split into smaller, more focused modules?**
-  _Cohesion score 0.1241565452091768 - nodes in this community are weakly interconnected._
+- **Should `useAuth` be split into smaller, more focused modules?**
+  _Cohesion score 0.12688172043010754 - nodes in this community are weakly interconnected._
